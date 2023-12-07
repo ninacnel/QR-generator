@@ -31,7 +31,7 @@ function NavbarBasic() {
           onClick={goHomeHandler}
           style={{ cursor: "pointer" }}
         >
-          React-Bootstrap
+          QR-Generator
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

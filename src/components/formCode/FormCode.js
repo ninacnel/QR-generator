@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Card from "../card/Card";
 import DownloadQR from "../downloadQR/DownloadQR";
+import FormCard from "../formCard/FormCard";
 
 const FormCode = () => {
   const [info, setInfo] = useState({});
@@ -40,7 +40,7 @@ const FormCode = () => {
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 flex-column">
-      <Card generateQR={generateQRCode} getInfoHandler={setInfo} />
+      <FormCard generateQR={generateQRCode} getInfoHandler={setInfo} />
       {Object.keys(info).length !== 0 && (
         <div>
           <h2>{info.prod_code}</h2>
