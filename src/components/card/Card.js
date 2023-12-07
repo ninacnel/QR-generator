@@ -10,7 +10,7 @@ const Card = ({ getInfoHandler, generateQR }) => {
 
   const setCodeHandler = () => {
     let info = {
-      prod_code: `https://hola.com/getprod=${code}`,
+      prod_code: `http://localhost:3000/prod/${code}`,
       width: size,
       height: size,
     };

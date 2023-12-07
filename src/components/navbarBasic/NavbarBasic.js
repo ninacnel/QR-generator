@@ -16,7 +16,7 @@ function NavbarBasic() {
   };
 
   const goProductoHandler = () => {
-    navigate("/prod");
+    navigate("/prod/:id");
   };
 
   return (

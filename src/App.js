@@ -25,7 +25,7 @@ function App() {
       ),
     },
     {
-      path: "/prod",
+      path: "/prod/:id",
       element: (
         <View>
           <ProductPage />
