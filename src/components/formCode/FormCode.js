@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Card from "../card/Card";
 import DownloadQR from "../downloadQR/DownloadQR";
 
-const Form = () => {
+const FormCode = () => {
   const [info, setInfo] = useState({});
   const [qrCodeUrl, setQRCodeUrl] = useState("");
   const [error, setError] = useState(null);
@@ -56,4 +56,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormCode;
