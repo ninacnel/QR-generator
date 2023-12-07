@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const Card = ({ getInfoHandler, generateQR }) => {
+const Card = ({ generateQR, getInfoHandler }) => {
+  const [info, setInfo] = useState({});
   const [code, setCode] = useState("");
   const [size, setSize] = useState(100);
 
@@ -8,17 +9,15 @@ const Card = ({ getInfoHandler, generateQR }) => {
     setCode(event.target.value);
   };
 
-  const setCodeHandler = () => {
+  const generateCodeHandler = () => {
     let info = {
       prod_code: `http://localhost:3000/prod/${code}`,
       width: size,
       height: size,
     };
+    setInfo(info);
     getInfoHandler(info);
-  };
-
-  const generateCodeHandler = () => {
-    generateQR();
+    generateQR(info);
   };
 
   return (
@@ -33,9 +32,6 @@ const Card = ({ getInfoHandler, generateQR }) => {
             style={{ width: "200px" }}
             onChange={onCodeChangeHandler}
           />
-          <button className="btn btn-outline-success" onClick={setCodeHandler}>
-            Set Code
-          </button>
           <button
             className="btn btn-outline-success"
             onClick={generateCodeHandler}
