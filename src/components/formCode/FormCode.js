@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Card from "../card/Card";
 import DownloadQR from "../downloadQR/DownloadQR";
+import FormCard from "../formCard/FormCard";
 
-const Form = () => {
+const FormCode = () => {
   const [info, setInfo] = useState({});
   const [qrCodeUrl, setQRCodeUrl] = useState("");
   const [error, setError] = useState(null);
 
-  const generateQRCode = async () => {
+  const generateQRCode = async (info) => {
     try {
       const encodedProd = encodeURIComponent(info.prod_code);
 
@@ -40,7 +40,7 @@ const Form = () => {
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 flex-column">
-      <Card getInfoHandler={setInfo} generateQR={generateQRCode} />
+      <FormCard generateQR={generateQRCode} getInfoHandler={setInfo} />
       {Object.keys(info).length !== 0 && (
         <div>
           <h2>{info.prod_code}</h2>
@@ -56,4 +56,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormCode;
