@@ -6,6 +6,7 @@ const FormCode = () => {
   const [info, setInfo] = useState({});
   const [qrCodeUrl, setQRCodeUrl] = useState("");
   const [error, setError] = useState(null);
+  const [codeNumber, setCodeNumber] = useState("");
 
   const generateQRCode = async (info) => {
     try {
@@ -40,13 +41,17 @@ const FormCode = () => {
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 flex-column">
-      <FormCard generateQR={generateQRCode} getInfoHandler={setInfo} />
+      <FormCard
+        generateQR={generateQRCode}
+        getInfoHandler={setInfo}
+        setNumber={setCodeNumber}
+      />
       {error && (
         <div style={{ color: "red" }}>
           <p>{error}</p>
         </div>
       )}
-      {qrCodeUrl && <DownloadQR qr={qrCodeUrl} code={info.prod_code} />}
+      {qrCodeUrl && <DownloadQR qr={qrCodeUrl} codeNumber={codeNumber} />}
     </div>
   );
 };

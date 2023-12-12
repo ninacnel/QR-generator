@@ -1,11 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
-const DownloadQR = ({ qr, code }) => {
+const DownloadQR = ({ qr, codeNumber }) => {
   const navigate = useNavigate();
-
-  const parts = code.split(/[\D]+/); //por si se descarga es para darle un nombre
-  const codeNumber = parts.find((part) => part !== "");
-
   const downloaderHandler = () => {
     const link = document.createElement("a");
     link.href = qr;

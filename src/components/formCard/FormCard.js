@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FormCard = ({ generateQR, getInfoHandler }) => {
+const FormCard = ({ generateQR, getInfoHandler, setNumber }) => {
   const [info, setInfo] = useState({});
   const [code, setCode] = useState("");
   const [size, setSize] = useState(200);
@@ -18,6 +18,7 @@ const FormCard = ({ generateQR, getInfoHandler }) => {
     setInfo(info);
     getInfoHandler(info);
     generateQR(info);
+    setNumber(code);
   };
 
   return (
