@@ -19,9 +19,13 @@ const DownloadQR = ({ qr, code }) => {
         src={qr}
         alt="QR Code"
         title="QR Code"
-        style={{ width: "100px", height: "100px" }}
+        style={{ width: "150px", height: "150px" }}
       />
-      <button className="btn btn-secondary mt-2" onClick={downloaderHandler}>
+      <button
+        className="btn btn-secondary mt-4 border-0"
+        style={{ borderRadius: "20px", backgroundColor: "olivedrab" }}
+        onClick={downloaderHandler}
+      >
         Descargar
       </button>
     </div>

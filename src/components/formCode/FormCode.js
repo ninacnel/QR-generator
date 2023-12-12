@@ -41,11 +41,6 @@ const FormCode = () => {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 flex-column">
       <FormCard generateQR={generateQRCode} getInfoHandler={setInfo} />
-      {Object.keys(info).length !== 0 && (
-        <div>
-          <h2>{info.prod_code}</h2>
-        </div> // solo es para mostrar lo que deberia guardarse
-      )}
       {error && (
         <div style={{ color: "red" }}>
           <p>{error}</p>
