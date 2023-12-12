@@ -28,7 +28,7 @@ const FormCard = ({ generateQR, getInfoHandler }) => {
             className="form-control border-0"
             type="text"
             value={code}
-            placeholder="Ingrese producto"
+            placeholder="Ingrese código"
             style={{
               width: "200px",
               borderRadius: "20px",
