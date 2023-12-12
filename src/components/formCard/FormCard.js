@@ -28,6 +28,7 @@ const FormCard = ({ generateQR, getInfoHandler, setNumber }) => {
           <input
             className="form-control border-0"
             type="text"
+            inputMode="numeric"
             value={code}
             placeholder="Ingrese código"
             style={{
